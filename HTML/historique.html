@@ -1,0 +1,112 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user']))
+{
+    header("Location: //API/index.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi Météo E3D - Historique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/historique.css">
+</head>
+
+<body>
+
+    <header class="barre-nav">
+        <div class="conteneur-nav">
+            <div class="cote-nav cote-gauche">
+                <img src="/Images/Logo E3D.png" alt="Logo E3D" class="logo">
+                <div class="texte-marque">
+                    <span class="ecole">EXTERNAT SAINT-JOSEPH</span>
+                    <span class="titre">Suivi Météo E3D</span>
+                </div>
+            </div>
+
+            <nav class="centre-nav">
+                <a href="/API/accueil.php">Accueil</a>
+                <a href="/API/station.php">Stations</a>
+                <a href="/API/alertes.php">Alertes</a>
+                <a href="/API/statistiques.php">Statistiques</a>
+                <a href="/API/historique.php" class="actif">Historique</a>
+                <a href="/API/apropos.php">À propos</a>
+            </nav>
+
+            <div class="cote-nav cote-droit">
+                <div class="bouton-utilisateur" id="userBtn">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="menu-compte" id="btncompte">
+                    <a href="/API/index.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenu-principal">
+        <div class="period-controls">
+            <button class="period-btn">Aujourd'hui</button>
+        </div>
+
+        <div class="conteneur-stats">
+
+            <div class="carte">
+                <h3><i class="fa-solid fa-temperature-half"></i> Température de l'air (°C)</h3>
+                <div class="graphique">
+                    <div class="releve-ligne"><span class="heure">14:30</span><span class="valeur">22.5 °C</span></div>
+                    <div class="releve-ligne"><span class="heure">14:00</span><span class="valeur">22.1 °C</span></div>
+                    <div class="releve-ligne"><span class="heure">13:30</span><span class="valeur">21.8 °C</span></div>
+                    <div class="releve-ligne"><span class="heure">13:00</span><span class="valeur">21.4 °C</span></div>
+                </div>
+            </div>
+
+            <div class="carte">
+                <h3><i class="fa-solid fa-droplet"></i> Humidité de l'air (%)</h3>
+                <div class="graphique">
+                    <div class="releve-ligne"><span class="heure">14:30</span><span class="valeur">64 %</span></div>
+                    <div class="releve-ligne"><span class="heure">14:00</span><span class="valeur">65 %</span></div>
+                    <div class="releve-ligne"><span class="heure">13:30</span><span class="valeur">67 %</span></div>
+                    <div class="releve-ligne"><span class="heure">13:00</span><span class="valeur">68 %</span></div>
+                </div>
+            </div>
+
+            <div class="carte">
+                <h3><i class="fa-solid fa-wind"></i> Vitesse du vent (km/h)</h3>
+                <div class="graphique">
+                    <div class="releve-ligne"><span class="heure">14:30</span><span class="valeur">12 km/h</span></div>
+                    <div class="releve-ligne"><span class="heure">14:00</span><span class="valeur">15 km/h</span></div>
+                    <div class="releve-ligne"><span class="heure">13:30</span><span class="valeur">10 km/h</span></div>
+                    <div class="releve-ligne"><span class="heure">13:00</span><span class="valeur">8 km/h</span></div>
+                </div>
+            </div>
+
+            <div class="carte">
+                <h3><i class="fa-solid fa-cloud-rain"></i> Pluviométrie (mm)</h3>
+                <div class="graphique">
+                    <div class="releve-ligne"><span class="heure">14:30</span><span class="valeur">0.0 mm</span></div>
+                    <div class="releve-ligne"><span class="heure">14:00</span><span class="valeur">0.2 mm</span></div>
+                    <div class="releve-ligne"><span class="heure">13:30</span><span class="valeur">0.5 mm</span></div>
+                    <div class="releve-ligne"><span class="heure">13:00</span><span class="valeur">0.0 mm</span></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="pied-page">
+        Externat Saint-Joseph - La Cordeille © 2026
+    </footer>
+
+    <script src="/JS/main.js"></script>
+
+</body>
+
+</html>
