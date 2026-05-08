@@ -1,0 +1,118 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user']))
+{
+    header("Location: /API/index.php");
+    exit();
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi Météo E3D - La Cordeille</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/apropos.css">
+</head>
+
+<body>
+
+    <header class="barre-nav">
+        <div class="conteneur-nav">
+            <div class="cote-nav cote-gauche">
+                <img src="/Images/Logo E3D.png" alt="Logo E3D" class="logo">
+                <div class="texte-marque">
+                    <span class="ecole">EXTERNAT SAINT-JOSEPH</span>
+                    <span class="titre">Suivi Météo E3D</span>
+                </div>
+            </div>
+
+            <nav class="centre-nav">
+                <a href="/API/accueil.php">Accueil</a>
+                <a href="/API/station.php">Stations</a>
+                <a href="/API/alertes.php">Alertes</a>
+                <a href="/API/statistiques.php">Statistiques</a>
+                <a href="/API/historique.php">Historique</a>
+                <a href="/API/apropos.php" class="actif">À propos</a>
+            </nav>
+
+            <div class="cote-nav cote-droit">
+                <div class="bouton-utilisateur" id="userBtn">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="menu-compte" id="btncompte">
+                    <a href="/API/logout.php">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteneur-apropos">
+
+        <h1>À propos du projet</h1>
+
+        <p>
+            Ce projet s'inscrit dans la démarche <strong>E3D (Éducation au Développement Durable)</strong>
+            de l'Externat Saint-Joseph La Cordeille.
+            Il vise à installer trois stations météorologiques autonomes et connectées
+            dans le potager pédagogique, la forêt et la cour de l'établissement.
+        </p>
+
+        <p>
+            Les stations mesurent en temps réel la température, l'humidité, la luminosité,
+            la pluviométrie et la vitesse du vent.
+            Les données collectées sont accessibles via cette plateforme afin de mieux comprendre
+            le climat local et son impact sur notre environnement.
+        </p>
+
+        <h2>Objectifs du projet</h2>
+
+        <ul>
+            <li><i class="fa-solid fa-arrow-up"></i> Améliorer la gestion du potager et préserver la
+                biodiversité</li>
+            <li><i class="fa-solid fa-water"></i> Optimiser l'arrosage et limiter le gaspillage d'eau</li>
+            <li><i class="fa-solid fa-arrow-up-right-dots"></i> Permettre aux élèves d'analyser des données réelles
+            </li>
+            <li><i class="fa-solid fa-earth-africa"></i> Sensibiliser aux enjeux du changement climatique</li>
+        </ul>
+
+        <p>
+            Ce projet pédagogique et écologique renforce l'engagement de La Cordeille
+            en faveur du développement durable.
+        </p>
+
+    </main>
+
+    <footer class="pied-page">
+        <div>
+            <h3 class="contact-titre">CONTACT</h3>
+            <p>04 94 24 43 49</p>
+            <p>2229 route de Faveyrolles</p>
+            <p>83190 Ollioules</p>
+        </div>
+
+        <div class="liens-sociaux">
+            <a href="https://www.instagram.com/esjlacordeille/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/ExternatSaintJosephLaCordeille"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/school/externat-saint-joseph---la-cordeille/"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <a href="RGPD.html" class="lien-rgpd">
+            <i class="fa-solid fa-address-card"></i> Information utilisateur
+        </a>
+
+    </footer>
+
+    <script src="/JS/main.js"></script>
+
+</body>
+
+</html>

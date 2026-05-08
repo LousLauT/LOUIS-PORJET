@@ -1,0 +1,235 @@
+:root {
+    --bleu-cordeille: #0b3c6f;
+    --jaune-cordeille: #f1c40f;
+    --fond-corps: #f4f7fa;
+    --blanc: #ffffff;
+    --texte-attenue: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--fond-corps);
+    color: var(--bleu-cordeille);
+}
+
+/* --- BARRE DE NAVIGATION --- */
+	
+.barre-nav {
+    background-color: var(--bleu-cordeille);
+    color: white;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteneur-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.cote-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.cote-droit {
+    justify-content: flex-end;
+}
+
+.centre-nav {
+    display: flex;
+    gap: 35px;
+    flex-shrink: 0;
+}
+
+.centre-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.centre-nav a:hover,
+.centre-nav a.actif {
+    color: var(--jaune-cordeille);
+    border-bottom: 2px solid var(--jaune-cordeille);
+}
+
+.logo {
+    height: 48px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.texte-marque {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.texte-marque .ecole {
+    font-size: 10px;
+    color: var(--jaune-cordeille);
+    letter-spacing: 1px;
+}
+
+.texte-marque .titre {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bouton-utilisateur {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* --- CONTENU À PROPOS --- */
+
+.conteneur-apropos {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 45px;
+    background-color: var(--blanc);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(11, 60, 111, 0.08);
+}
+
+.conteneur-apropos h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--bleu-cordeille);
+}
+
+.conteneur-apropos h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--bleu-cordeille);
+    border-left: 4px solid rgb(147, 248, 147);
+    padding-left: 10px;
+}
+
+.conteneur-apropos p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.conteneur-apropos ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.conteneur-apropos li {
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    background: rgba(8, 186, 29, 0.08);
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.conteneur-apropos li:hover {
+    background: rgba(5, 214, 40, 0.18);
+    transform: translateX(4px);
+}
+
+/* --- PIED DE PAGE --- */
+
+.pied-page {
+    text-align: center;
+    border-radius: 25px;
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 30px 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pied-page .contact-titre {
+    color: rgb(224, 79, 16);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.pied-page p {
+    margin: 5px 0;
+    color: var(--bleu-cordeille);
+}
+
+
+
+.liens-sociaux {
+    margin-top: 20px;
+}
+
+.liens-sociaux a {
+    color: var(--bleu-cordeille);
+    font-size: 20px;
+    margin: 0 10px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.liens-sociaux a:hover {
+    color: rgb(224, 79, 16);
+    transform: scale(1.15);
+}
+
+.lien-rgpd {
+    display: inline-block;
+    margin-top: 25px;
+    padding-top: 15px;
+    color: var(--texte-atténué);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+
+.lien-rgpd:hover {
+    color: var(--jaune-cordeille);
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.menu-compte {
+    display: none;
+}
+
+.menu-compte a {
+    text-decoration : none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.menu-compte.active {
+    display: block;
+}
